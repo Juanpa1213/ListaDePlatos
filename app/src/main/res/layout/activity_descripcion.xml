@@ -33,13 +33,15 @@
             android:id="@+id/precio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="20dp"
             android:text="TextView"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="20dp"
             android:text="TextView" />
     </LinearLayout>
 </RelativeLayout>
