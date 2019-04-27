@@ -1,7 +1,10 @@
 package com.jp.listadeplatos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,5 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         lista =  (ListView) findViewById(R.id.Lista);
         lista.setAdapter(new Adapter(this, datos,datosImagenes));
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent visorDescripvion = new Intent(view.getContext(),descripcion.class);
+                visorDescripvion.putExtra("nombre",datos[(position)][0]);
+                visorDescripvion.putExtra( "descripcion",datos[(position)][2]);
+                startActivity(visorDescripvion);
+            }
+        });
     }
 }
